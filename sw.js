@@ -52,5 +52,7 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
+  // The parents' website (and its video) isn't part of the app: straight from the network.
+  if (url.pathname.includes('/parents/')) return;
   event.respondWith(url.pathname.includes('/media/') ? cacheFirst(req) : networkFirst(req));
 });

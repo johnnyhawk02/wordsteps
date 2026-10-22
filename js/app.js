@@ -7,6 +7,7 @@ import * as audio from './audio.js';
 import * as store from './store.js';
 import * as session from './session.js';
 import * as adult from './adult.js';
+import * as install from './install.js';
 import { ACTIVITIES, statuses } from './engine.js';
 import { SETS } from './words.js';
 import { h, show, card, holdButton } from './ui.js';
@@ -52,6 +53,7 @@ export async function home() {
   show(h('div.home', {},
     h('header.home-top', {},
       h('div.brand', {}, 'WordSteps'),
+      install.corner(),
       h('div.version', {}, VERSION),
       holdButton('Hold for grown-ups', GEAR, () => adult.open({ onClose: home })),
     ),
@@ -70,4 +72,7 @@ export async function home() {
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
-home();
+home().then(() => {
+  // The parents' page links here with ?install to show how to install it.
+  if (new URLSearchParams(location.search).has('install') && !install.installed()) install.openGuide();
+});

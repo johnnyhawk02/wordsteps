@@ -101,7 +101,24 @@ img { -webkit-user-drag: none; }
 }
 .home-top { display: flex; align-items: center; gap: 12px; }
 .brand { font-size: 28px; font-weight: 800; color: var(--accent); }
-.version { margin-left: auto; font-size: 12px; color: var(--soft); opacity: .6; }
+.version { font-size: 12px; color: var(--soft); opacity: .6; }
+.corner { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.offline { font-size: 14px; font-weight: 700; color: var(--soft); }
+.offline.ready { color: var(--good); }
+.install { padding: 9px 18px; border: 0; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 16px; font-weight: 800; }
+
+/* The install guide */
+.overlay { position: fixed; inset: 0; z-index: 10; background: rgba(30, 28, 24, .45); display: grid; place-items: center; padding: 20px; }
+.sheet { width: min(520px, 100%); background: var(--card); border-radius: 24px; padding: 26px 28px; box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+  display: grid; gap: 14px; -webkit-user-select: text; user-select: text; }
+.sheet h2 { margin: 0; font-size: 26px; }
+.sheet p { margin: 0; line-height: 1.45; }
+.sheet .small { color: var(--soft); font-size: 15px; }
+.sheet .warn { background: #fff3d6; border-radius: 12px; padding: 10px 14px; font-weight: 700; }
+.sheet .btn { justify-self: start; }
+.guide-steps { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; font-size: 18px; line-height: 1.4; }
+.share-icon { display: inline-block; width: 26px; height: 26px; vertical-align: -6px; color: #0a7aff; }
+.share-icon svg { width: 100%; height: 100%; }
 
 .set { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2vmin; min-height: 0; }
 .set-middle { display: flex; flex-direction: column; align-items: center; gap: 2vmin; min-height: 0; }

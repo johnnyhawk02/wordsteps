@@ -172,6 +172,7 @@ async function about(body) {
     h('p', {}, 'WordSteps teaches early words in small steps: look and listen first, then match identical pictures, then find a picture from its spoken word. Each set has 4 words; begin with 1 or 2 pictures to choose from and let the number grow as the child succeeds. Keep sessions short and fun, sit together, and say each word with the app.'),
     h('p', {}, 'Wrong taps are never marked wrong: the right picture is shown instead, so the child always finishes on a success.'),
     h('p.credit', {}, 'Pictograms by Sergio Palao, from ARASAAC (arasaac.org), Government of Aragón, licensed CC BY-NC-SA 4.0. Voice recorded with OpenAI.'),
+    h('p', {}, h('a', { href: 'parents/', target: '_blank' }, 'WordSteps for parents: what it is, how to install it, and a short video')),
     h('p.credit', {}, `Version ${VERSION} · ${BUILT}`),
   ));
 }
